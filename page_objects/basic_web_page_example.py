@@ -1,14 +1,9 @@
-from playwright.sync_api import Playwright
+from playwright.sync_api import Page
 
 
 class BasicWebPageExample:
-    def __init__(self, playwright: Playwright, base_url: str, headless=False):
-        self.browser = playwright.chromium.launch(headless=headless)
-        self.context = self.browser.new_context()
-        self.context.tracing.start(screenshots=True, snapshots=True, sources=True)
-        self.page = self.context.new_page()
-        self.base_url = base_url
-        self.page.goto(base_url)
+    def __init__(self, page: Page):
+        self.page = page
 
     def check_main_page(self):
         assert self.page.locator("text=Test Pages For Automating").is_visible()
@@ -29,8 +24,3 @@ class BasicWebPageExample:
 
         self.page.locator("text=Index").click()
         self.page.wait_for_url("https://testpages.herokuapp.com/styled/index.html")
-
-    def close(self):
-        self.context.tracing.stop(path="trace.zip")
-        self.context.close()
-        self.browser.close()
