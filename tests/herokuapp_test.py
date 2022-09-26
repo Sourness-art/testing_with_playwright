@@ -23,9 +23,13 @@ def test_table_test_page(t_base):
     t_base.table_test_page.navigate_table_page()
     amount = t_base.table_test_page.get_table_row_amount()
     assert amount != 0
-    assert 'Douglas' in t_base.table_test_page.try_get_values()
+    print(t_base.table_test_page.get_values())
+    assert 'Douglas' in t_base.table_test_page.get_values()
 
 
 def test_dynamic_test_table_test_page(t_base):
     t_base.dynamic_table_test_page.navigate_to_dynamic_table_page()
     t_base.dynamic_table_test_page.add_value_in_a_row()
+    print(t_base.dynamic_table_test_page.get_value_in_table())
+    assert 'John' in t_base.dynamic_table_test_page.get_value_in_table()
+

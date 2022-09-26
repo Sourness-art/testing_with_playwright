@@ -24,12 +24,12 @@ def t_base(playwright_init):
 #     app.close()
 
 
-@fixture
-def element_attributes_examples(t_base):
-    # app = ElementAttributesExamples(test_base)
-    app = t_base
-    app.goto('/styled/attributes-test')
-    yield app
+# @fixture
+# def element_attributes_examples(t_base):
+#     # app = ElementAttributesExamples(test_base)
+#     app = t_base
+#     app.goto('/styled/attributes-test')
+#     yield app
 
 #
 # @fixture

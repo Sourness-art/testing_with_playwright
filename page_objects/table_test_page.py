@@ -13,10 +13,7 @@ class TableTestPage:
     def get_table_row_amount(self):
         return self.page.locator("#mytable > tbody > tr").count()
 
-    def get_table_columns_amount(self):
-        return self.page.locator("#mytable > tbody > tr > th").count()
-
-    def try_get_values(self):
+    def get_values(self):
         data_table = {"", ""}
         for s in range(self.get_table_row_amount()):
             s += 1
@@ -27,4 +24,3 @@ class TableTestPage:
                     f"#mytable > tbody > tr:nth-child({s + 1}) > td:nth-child(2)").all_inner_texts()
                 data_table.update(col1_1, col2_1)
         return sorted(data_table)
-
