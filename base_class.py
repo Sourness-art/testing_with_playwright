@@ -1,8 +1,10 @@
 from playwright.sync_api import Playwright
 
-from page_objects.basic_web_page_example import BasicWebPageExample
+from page_objects.alert_box_page import AlertBoxPage
+from page_objects.basic_web_page import BasicWebPageExample
+from page_objects.fake_alert_page import FakeAlertPage
 from page_objects.table_test_page import TableTestPage
-from page_objects.element_attributes_examples import ElementAttributesExamples
+from page_objects.element_attributes_examples_page import ElementAttributesExamples
 from page_objects.dynamic_table_test_page import DynamicTableTestPage
 
 
@@ -18,6 +20,8 @@ class TestBase:
         self.table_test_page = TableTestPage(self.page)
         self.element_attributes_examples = ElementAttributesExamples(self.page)
         self.dynamic_table_test_page = DynamicTableTestPage(self.page)
+        self.alert_box_page = AlertBoxPage(self.page)
+        self.fake_alert_page = FakeAlertPage(self.page)
 
     # def goto(self, endpoint: str, use_base_url=True):
     #     if use_base_url:

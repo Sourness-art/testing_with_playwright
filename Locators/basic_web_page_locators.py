@@ -1,0 +1,6 @@
+MAIN_PAGE_TITLE = "text=Test Pages For Automating"
+BUTTON_TO_BASIC_WEB_PAGE = "text=Basic Web Page Example"
+BASIC_WEB_PAGE_TITLE = "text=Basic Web Page Example"
+FIRST_PARAGRAPH = "text=A paragraph of text"
+SECOND_PARAGRAPH = "text=Another paragraph of text"
+BUTTON_TO_MAIN_PAGE = "text=Index"

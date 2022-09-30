@@ -1,0 +1,6 @@
+BUTTON_TO_ELEMENTS_ATTRIBUTE_EXAMPLES = "text=Element Attributes Examples"
+ORIGINAL_TITLE = "text=This paragraph has attributes"
+TITLE = "text=This paragraph has attributes"
+CUSTOM_ATTRIBUTE = "text=This paragraph has attributes"
+NEXT_ID = "id=jsattributes"
+ADD_ATTR_BUTTON = "text=Add Another Attribute"

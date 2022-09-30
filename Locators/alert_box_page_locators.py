@@ -1,0 +1,6 @@
+BUTTON_TO_ALERT_BOX_PAGE ="#alerttest"
+ALERT_BOX_BUTTON = "text=Show alert box"
+CONFIRM_BOX_BUTTON = "text=Show confirm box"
+RESULT_TEXT = "#confirmreturn"
+PROMPT_BOX_BUTTON = "#promptexample"
+PROMPT_TEXT = "//*[@id='promptreturn']"
