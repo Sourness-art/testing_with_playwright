@@ -1,0 +1,11 @@
+FILE_SELECTOR = "#fileinput"
+GENERAL_FILE_TYPE = "A General File"
+IMAGE_FILE_TYPE = "Image"
+UPLOAD_BUTTON = "//input[@name='upload']"
+UPLOADED_FILE_NAME = '//p[@id = "uploadedfilename"]'
+UPLOAD_ANOTHER_BUTTON = "//button"
+DOWNLOAD_FILE_BUTTON = "//button[@id='direct-download']"
+DOWNLOAD_FILE_DESTINATION = "/resources/new_file.txt"
+FILE_TO_DELETE = "/resources/new_file.txt"
+TXT_FILE_IN_FOLDER = "/resources/file.txt"
+JPG_FILE_IN_FOLDER = "/resources/Stella.jpg"

@@ -1,6 +1,3 @@
-import time
-
-
 def test_basic_web_page_example(base_class):
     base_class.basic_web_page_example.check_main_page()
     base_class.basic_web_page_example.navigate_to_basic_page()
@@ -111,5 +108,73 @@ def test_fake_exit_modal_box(base_class):
     base_class.fake_alert_page.navigate_to_fake_alert_page()
     base_class.fake_alert_page.open_modal_box()
     assert base_class.fake_alert_page.check_alert_box_is_visible() is True
-    base_class.fake_alert_page.exit_modal_box()
-    # assert base_class.fake_alert_page.check_alert_box_is_visible() is False
+
+
+def test_growing_button(base_class):
+    base_class.growing_button_page.navigate_growing_button_page()
+    base_class.growing_button_page.growing_button_click()
+
+
+def test_uploading_txt_file(base_class):
+    base_class.file_downloading_uploading.navigate_to_upload_file_page()
+    base_class.file_downloading_uploading.open_file_selector()
+    base_class.file_downloading_uploading.select_file_for_uploading_txt()
+    base_class.file_downloading_uploading.select_file_type_txt()
+    base_class.file_downloading_uploading.upload_file()
+    assert base_class.file_downloading_uploading.get_txt_file_name_from_folder() == \
+           base_class.file_downloading_uploading.get_file_name_from_page()
+
+
+def test_uploading_jpg_file(base_class):
+    base_class.file_downloading_uploading.navigate_to_upload_file_page()
+    base_class.file_downloading_uploading.open_file_selector()
+    base_class.file_downloading_uploading.select_file_for_uploading_jpg()
+    base_class.file_downloading_uploading.select_file_type_jpg()
+    base_class.file_downloading_uploading.upload_file()
+    assert base_class.file_downloading_uploading.get_jpg_file_name_from_folder() == \
+           base_class.file_downloading_uploading.get_file_name_from_page()
+
+
+def test_change_uploaded_file(base_class):
+    base_class.file_downloading_uploading.navigate_to_upload_file_page()
+    base_class.file_downloading_uploading.open_file_selector()
+    base_class.file_downloading_uploading.select_file_for_uploading_txt()
+    base_class.file_downloading_uploading.select_file_type_txt()
+    base_class.file_downloading_uploading.upload_file()
+    assert base_class.file_downloading_uploading.get_txt_file_name_from_folder() == \
+           base_class.file_downloading_uploading.get_file_name_from_page()
+    base_class.file_downloading_uploading.change_selected_file()
+    base_class.file_downloading_uploading.open_file_selector()
+    base_class.file_downloading_uploading.select_file_for_uploading_jpg()
+    base_class.file_downloading_uploading.select_file_type_jpg()
+    base_class.file_downloading_uploading.upload_file()
+    assert base_class.file_downloading_uploading.get_jpg_file_name_from_folder() == \
+           base_class.file_downloading_uploading.get_file_name_from_page()
+
+
+def test_download_file(base_class):
+    base_class.file_downloading_uploading.navigate_to_download_file_page()
+    base_class.file_downloading_uploading.download_file()
+    assert base_class.file_downloading_uploading.check_file_is_downloaded() is True
+    base_class.file_downloading_uploading.delete_unused_file()
+
+
+def test_triangle(base_class):
+    base_class.basic_triangle_page.navigate_to_button_based_triangle_page()
+    base_class.basic_triangle_page.enter_data_for_equilateral_triangle()
+    base_class.basic_triangle_page.identify_triangle_type()
+    assert base_class.basic_triangle_page.get_triangle_type() == "Equilateral"
+
+    base_class.basic_triangle_page.enter_data_for_scalene_triangle()
+    base_class.basic_triangle_page.identify_triangle_type()
+    assert base_class.basic_triangle_page.get_triangle_type() == "Scalene"
+
+    base_class.basic_triangle_page.enter_data_for_isosceles_triangle()
+    base_class.basic_triangle_page.identify_triangle_type()
+    assert base_class.basic_triangle_page.get_triangle_type() == "Isosceles"
+
+    base_class.basic_triangle_page.enter_data_for_not_a_triangle()
+    base_class.basic_triangle_page.identify_triangle_type()
+    assert base_class.basic_triangle_page.get_triangle_type() == "Error: Not a Triangle"
+
+

@@ -1,0 +1,5 @@
+SIDE_1 = "Side 1:"
+SIDE_2 = "Side 2:"
+SIDE_3 = "Side 3:"
+IDENTIFY_BUTTON = "//*[@id='identify-triangle-action']"
+TYPE = "//p[@id='triangle-type']"

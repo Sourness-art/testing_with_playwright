@@ -16,8 +16,6 @@ class AlertBoxPage:
 
     def usual_alert_box(self):
         self.page.once("dialog", lambda dialog: dialog.dismiss())
-        # self.page.on("dialog", lambda dialog: print(dialog.message))
-        # time.sleep(1)
         self.page.locator(ALERT_BOX_BUTTON).click()
 
     def confirm_alert_box(self):

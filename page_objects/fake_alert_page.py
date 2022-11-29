@@ -1,4 +1,4 @@
-from playwright.sync_api import Playwright, sync_playwright, expect, Page
+from playwright.sync_api import Page
 
 from Locators.fake_alert_locators import *
 
@@ -25,6 +25,3 @@ class FakeAlertPage:
 
     def accept_modal_box(self):
         self.page.locator(ACCEPT_BUTTON).click()
-
-    def exit_modal_box(self):
-        self.page.locator("//div[@class = 'faded-background active']").click()
